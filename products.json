@@ -1,0 +1,171 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80",
+    "title": "Shirt",
+    "price": 45,
+    "sale": 25,
+    "inStock": 10,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80",
+    "title": "Shirt",
+    "price": 50,
+    "inStock": 10,
+    "sale": 25,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 2
+  },
+  {
+    "id": 3,
+    "image": "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    "title": "Cool Cap",
+    "inStock": 10,
+    "price": 15,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 5
+  },
+
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1617118602199-d3c05ae37ed8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "title": "Gloves",
+    "inStock": 10,
+    "price": 15,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 1.5
+  },
+  {
+    "id": 5,
+    "image": "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+    "title": "Shirt",
+    "price": 50,
+    "sale": 20,
+    "inStock": 10,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 4,
+    "featured": true
+  },
+
+  {
+    "id": 6,
+    "image": "https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
+    "inStock": 10,
+    "title": "Dress",
+    "price": 60,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 2,
+    "featured": true
+  },
+  {
+    "id": 7,
+    "image": "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    "title": "Bag",
+    "inStock": 10,
+    "price": 193,
+    "sale": 134,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "clothes",
+    "rating": 3.5,
+    "featured": true
+  },
+  {
+    "id": 8,
+    "image": "https://images.unsplash.com/photo-1593618229012-8aaad1cfefc3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+    "title": "Kitchen Knifes",
+    "price": 40,
+    "inStock": 10,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "kitchen",
+    "rating": 1.5
+  },
+  {
+    "id": 9,
+    "image": "https://images.unsplash.com/photo-1594273390521-3409664d9034?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "inStock": 10,
+    "title": "Coffee Machine",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "price": 500,
+    "category": "coffee",
+    "rating": 4,
+    "featured": true
+  },
+
+  {
+    "id": 10,
+    "image": "https://images.unsplash.com/photo-1567459045800-4d77c81fc3f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+    "inStock": 10,
+    "title": "Lamp",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "price": 100,
+    "sale": 79,
+    "category": "office",
+    "rating": 2,
+    "featured": true
+  },
+  {
+    "id": 11,
+    "image": "https://images.unsplash.com/photo-1448471237638-f8ccc7d5ac9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80",
+    "inStock": 10,
+    "title": "Pencils",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "office",
+    "price": 5,
+    "rating": 3.5,
+    "featured": true
+  },
+
+  {
+    "id": 12,
+    "image": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+    "inStock": 10,
+    "title": "Chair",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "bedroom",
+    "price": 290,
+    "rating": 3.5,
+    "featured": true
+  },
+  {
+    "id": 13,
+    "image": "https://images.unsplash.com/photo-1619367302084-3d07eb49159f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+    "inStock": 10,
+    "title": "Plates",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "kitchen",
+    "price": 25,
+    "rating": 3.5,
+    "featured": true
+  },
+  {
+    "id": 14,
+    "image": "https://images.unsplash.com/photo-1575024357670-2b5164f470c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "inStock": 10,
+    "title": "Lap Top",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "tech",
+    "price": 800,
+    "rating": 3.5,
+    "featured": true
+  },
+  {
+    "id": 15,
+    "image": "https://images.unsplash.com/photo-1587117267105-3579472c1fab?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    "inStock": 10,
+    "title": "Tablet",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus ornare, volutpat dolor in, rutrum quam. Sed ut nunc varius, placerat nisl eget, venenatis nulla. Nullam mi est, mattis sed iaculis nec, tincidunt sed lacus.",
+    "category": "tech",
+    "price": 600,
+    "rating": 3.5,
+    "featured": true
+  }
+]

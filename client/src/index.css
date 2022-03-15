@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-link-color  py-3 px-5  font-bold border-2 border-p-primary relative before:content-['Buy_Now'] before:absolute before:-top-1 before:-left-1 before:bg-card-color before:w-full before:h-full before:border-2 before:border-p-primary hover:before:top-0 hover:before:left-0 before:transition-all before:duration-300 before:flex before:items-center before:justify-center;
+  }
+
+  .card-primary {
+    @apply relative flex flex-col bg-card-color border-2  border-p-primary m-2;
+  }
+
+  .card-img-container {
+    @apply h-52 w-52 m-auto;
+  }
+
+  .card-img {
+    @apply w-full h-full;
+  }
+
+  .card-text-container {
+    @apply p-3;
+  }
+
+  .card-title {
+    @apply text-2xl font-bold;
+  }
+
+  .card-desc {
+    @apply mb-3;
+  }
+
+  .card-product-desc {
+    @apply flex flex-col justify-between;
+  }
+
+  .card-cat {
+    @apply text-sub-heading text-lg font-bold;
+  }
+
+  .card-action {
+    @apply w-full p-3 bg-p-primary flex justify-between items-center;
+  }
+
+  .card-fav-icon {
+    @apply text-link-color text-2xl cursor-pointer hover:fill-link-hover transition-colors duration-300;
+  }
+}
