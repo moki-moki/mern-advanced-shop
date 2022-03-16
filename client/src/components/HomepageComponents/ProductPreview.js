@@ -1,4 +1,5 @@
 import { AiOutlineHeart } from "react-icons/ai";
+import { RiDeleteBinLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import Ratings from "../Ratings";
 import { useEffect } from "react";
@@ -7,17 +8,12 @@ import {
   showcaseProducts,
   reset,
 } from "../../redux/products/productShowcaseSlice";
-import { toast } from "react-toastify";
-import { addProduct } from "../../redux/cart/cartSlice";
-import { addWishList } from "../../redux/wishList/wishListSlice";
-import { config } from "../utils/toastConfig";
 import { addToCartHelper, addToWishlistHelper } from "../utils/addingFunc";
+import { deleteProduct } from "../adminComponents/helperFunctions";
 
 const ProductPreview = () => {
   const dispatch = useDispatch();
-  const { showcaseProd, loading } = useSelector(
-    (state) => state.showcaseProducts
-  );
+  const { showcaseProd } = useSelector((state) => state.showcaseProducts);
   const { products: cartProducts } = useSelector((state) => state.cart);
   const { products: wishListProducts } = useSelector((state) => state.wishList);
   const { user } = useSelector((state) => state.auth);
@@ -28,6 +24,10 @@ const ProductPreview = () => {
 
   const addToWishlistHandler = (product) => {
     addToWishlistHelper(wishListProducts, product, dispatch);
+  };
+
+  const deleteProductHandler = (id, token) => {
+    deleteProduct(id, token);
   };
 
   useEffect(() => {
@@ -53,6 +53,18 @@ const ProductPreview = () => {
                     Sale
                   </span>
                 ) : null}
+                {/* ICON FOR DELETING IF USER IS ADMIN */}
+                {user && user.isAdmin ? (
+                  <span
+                    className="p-3 bg-p-primary border-2 border-link-color rounded-full text-link-color block absolute right-0.5 top-0.5 hover:border-link-hover hover:text-link-hover transition-colors duration-300"
+                    onClick={() =>
+                      deleteProductHandler(item._id, user.accessToken)
+                    }
+                  >
+                    <RiDeleteBinLine />
+                  </span>
+                ) : null}
+
                 <div className="card-img-container">
                   <img src={item.image} className="card-img" />
                 </div>

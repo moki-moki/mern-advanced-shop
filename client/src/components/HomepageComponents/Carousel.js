@@ -61,9 +61,9 @@ const Carousel = () => {
   );
 
   return (
-    <div className="p-10 lg:p-10 md:p-5 sm:py-5 sm:w-full  flex justify-center  items-center">
+    <div className="p-10 sm:p-5 xsm:p-3 lg:p-10 md:p-5 sm:py-5 sm:w-full flex justify-center items-center">
       <div className="relative w-full flex border-2 border-p-primary justify-center items-center">
-        <div className="inline-flex w-full h-96 md:h-auto overflow-hidden scroll-mandatory">
+        <div className="inline-flex w-full md:h-auto overflow-hidden scroll-mandatory">
           {sliderControl(true)}
           {images.map((img, i) => (
             <div className="w-full flex-shrink-0" key={img.id} ref={imgRef[i]}>

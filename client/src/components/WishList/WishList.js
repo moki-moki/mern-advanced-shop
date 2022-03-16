@@ -22,8 +22,8 @@ const WishList = () => {
   return (
     <div>
       {products.length === 0 ? (
-        <div className="flex justify-center items-center">
-          <h1 className="text-3xl">Your wish list is empty :(</h1>
+        <div className="flex justify-center items-center h-screen">
+          <h1 className="text-5xl">Your wish list is empty :(</h1>
         </div>
       ) : (
         <div className="   grid grid-cols-3 grid-rows-1 md:w-full md:grid-cols-2 sm:grid-cols-2 sm:w-full xsm:grid-cols-1 xsm:w-full">
@@ -85,7 +85,7 @@ const WishList = () => {
               <div className="card-action ">
                 <button
                   onClick={() => addToCartHandler(item)}
-                  className="btn-primary z-20"
+                  className="btn-primary"
                 >
                   Buy Now
                 </button>

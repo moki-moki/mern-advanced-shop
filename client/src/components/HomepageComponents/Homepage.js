@@ -2,6 +2,7 @@ import Carousel from "./Carousel";
 import HomepageCards from "./HomepageCards";
 import LogoSliders from "./LogoSliders";
 import { AiOutlineHeart } from "react-icons/ai";
+import { RiDeleteBinLine } from "react-icons/ri";
 import ProductPreview from "./ProductPreview";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +13,7 @@ import { toast } from "react-toastify";
 import { config } from "../utils/toastConfig";
 import { Link } from "react-router-dom";
 import { addToCartHelper, addToWishlistHelper } from "../utils/addingFunc";
+import { deleteProduct } from "../adminComponents/helperFunctions";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -43,6 +45,10 @@ const Homepage = () => {
     addToWishlistHelper(wishListProducts, product, dispatch);
   };
 
+  const deleteProductHandler = (id, token) => {
+    deleteProduct(id, token);
+  };
+
   return (
     <>
       {loading ? (
@@ -64,6 +70,17 @@ const Homepage = () => {
                   {item.sale ? (
                     <span className="bg-p-primary w-14  font-bold text-link-color absolute -left-2 top-2 p-0.5  rounded-r-lg block">
                       Sale
+                    </span>
+                  ) : null}
+                  {/* ICON FOR DELETING IF USER IS ADMIN */}
+                  {user && user.isAdmin ? (
+                    <span
+                      className="p-3 bg-p-primary border-2 border-link-color rounded-full text-link-color block absolute right-0.5 top-0.5 hover:border-link-hover hover:text-link-hover transition-colors duration-300"
+                      onClick={() =>
+                        deleteProductHandler(item._id, user.accessToken)
+                      }
+                    >
+                      <RiDeleteBinLine />
                     </span>
                   ) : null}
                   <div className="card-img-container">

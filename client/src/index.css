@@ -28,7 +28,7 @@
   }
 
   .card-desc {
-    @apply mb-3;
+    @apply mb-3 break-words;
   }
 
   .card-product-desc {

@@ -73,7 +73,6 @@ const AddProduct = () => {
           user.accessToken
         );
       }
-      toast.success("Product was added successfully 😃", config);
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong, product wasn't created 💩", config);
@@ -104,7 +103,7 @@ const AddProduct = () => {
           )}
         </div>
         <form onSubmit={onSubmit} className="flex flex-col">
-          <label>Upload Product Image *</label>
+          <label htmlFor="file">Upload Product Image *</label>
           <input
             onChange={(e) => setFormVals({ img: e.target.files[0] })}
             type="file"
@@ -113,50 +112,55 @@ const AddProduct = () => {
             accept=".png,.jpeg,.jpg"
             className="mb-2"
           />
-          <label for="name">Name *</label>
+          <label htmlFor="name">Name *</label>
           <input
             onChange={onChange}
+            value={name}
             name="name"
             className="border-2 outline-none border-p-primary rounded-full p-2"
             placeholder="Enter Name..."
-            requierd
+            required
           />
-          <label for="price">Price(max 10 characters) *</label>
+          <label htmlFor="price">Price(max 7 characters) *</label>
           <input
             onChange={onChange}
+            value={price}
             name="price"
             className="border-2 outline-none border-p-primary rounded-full p-2"
             type="text"
             placeholder="Enter price..."
-            requierd
+            required
             maxLength="7"
             onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
           />
-          <label for="sale">Sale(max 10 characters) *</label>
+          <label htmlFor="sale">Sale(max 7 characters) </label>
           <input
             onChange={onChange}
+            value={sale}
             name="sale"
             className="border-2 outline-none border-p-primary rounded-full p-2"
-            placeholder="Enter Name..."
-            requierd
+            placeholder="Sale Price..."
             type="text"
             maxLength="7"
             onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
           />
-          <label for="desc">Description(max 500 characters) *</label>
+          <label htmlFor="desc">Description(max 500 characters) *</label>
           <input
             onChange={onChange}
             name="desc"
+            value={desc}
             className="border-2 outline-none border-p-primary rounded-full p-2"
-            placeholder="Enter Name..."
-            requierd
+            placeholder="Description..."
+            required
             type="text"
             maxLength="500"
           />
-          <label name="cat">Select Category *</label>
+          <label htmlFor="cat">Select Category *</label>
           <select
             onChange={onChange}
             name="cat"
+            value={cat}
+            required
             className="p-2 border-2 border-p-primary rounded-xl w-fit"
           >
             {checkbox.map((category) => (

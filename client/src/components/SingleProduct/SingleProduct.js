@@ -1,41 +1,25 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Slide, toast, ToastContainer } from "react-toastify";
-import { addProduct } from "../../redux/cart/cartSlice";
 import { singleProduct } from "../../redux/products/singleProductSlice";
 import Loader from "../Loader";
 import Ratings from "../Ratings";
+import { addToCartHelper } from "../utils/addingFunc";
 
 const SingleProduct = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
   const { product, loading } = useSelector((state) => state.singleProduct);
-  const { products } = useSelector((state) => state.cart);
-
-  const config = {
-    position: "top-right",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    transition: Slide,
-  };
+  const { user } = useSelector((state) => state.auth);
+  const { products: cartProducts } = useSelector((state) => state.cart);
 
   useEffect(() => {
     dispatch(singleProduct(id));
   }, [dispatch]);
 
   const addToCartHandler = (cartItem) => {
-    if (products.filter((i) => i._id === cartItem._id).length > 0) {
-      toast.error("Item is already in the cart 😑", config);
-    } else {
-      toast.success("Item added to the cart 😀", config);
-      dispatch(addProduct({ ...cartItem, qty: 1 }));
-    }
+    addToCartHelper(cartItem, user, cartProducts, dispatch);
   };
 
   return (
@@ -44,7 +28,6 @@ const SingleProduct = () => {
         <Loader />
       ) : (
         <div className="flex  sm:flex-col xsm:flex-col ">
-          <ToastContainer />
           <div className="w-1/2 sm:w-auto xsm:w-auto m-5">
             <div className="">
               <img

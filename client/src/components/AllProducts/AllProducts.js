@@ -4,6 +4,7 @@ import Ratings from "../Ratings";
 import Filters from "./Filters";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useSearchParams } from "react-router-dom";
+import { deleteProduct } from "../adminComponents/helperFunctions";
 import { useDispatch, useSelector } from "react-redux";
 import {
   reset,
@@ -11,6 +12,7 @@ import {
 } from "../../redux/products/productShowcaseSlice";
 import Loader from "../Loader";
 import { addToCartHelper, addToWishlistHelper } from "../utils/addingFunc";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 const AllProducts = () => {
   const [toggleCat, setToggleCat] = useState(false);
@@ -29,17 +31,6 @@ const AllProducts = () => {
 
   const [filter, setFilter] = useState({});
   const [sort, setSort] = useState();
-
-  /* Sets query filters then search params sets them */
-  const filterParams = (e) => {
-    if (e.target.checked) {
-      setFilter({ ...filter, [e.target.name]: e.target.value });
-    } else {
-      // Delete unchecks
-      delete filter[e.target.name];
-      setFilter({ ...filter });
-    }
-  };
 
   /* TODO: Make sort params concat with category params! */
   useEffect(() => {
@@ -60,11 +51,6 @@ const AllProducts = () => {
     }
   }, [sort, searchParams]);
 
-  const handleSort = (e) => {
-    setSort(e.target.value);
-    console.log(sort);
-  };
-
   /* Main Function */
   useEffect(() => {
     if (error) {
@@ -79,6 +65,22 @@ const AllProducts = () => {
     };
   }, [dispatch, searchParams, setSearchParams]);
 
+  /* Sets query filters then search params sets them */
+  const filterParams = (e) => {
+    if (e.target.checked) {
+      setFilter({ ...filter, [e.target.name]: e.target.value });
+    } else {
+      // Delete unchecks
+      delete filter[e.target.name];
+      setFilter({ ...filter });
+    }
+  };
+
+  const handleSort = (e) => {
+    setSort(e.target.value);
+    console.log(sort);
+  };
+
   /* Cart functionality only below */
   const addToCartHandler = (cartItem) => {
     addToCartHelper(cartItem, user, cartProducts, dispatch);
@@ -88,7 +90,10 @@ const AllProducts = () => {
     addToWishlistHelper(wishListProducts, product, dispatch);
   };
 
-  console.log(showcaseProd.image);
+  const deleteProductHandler = (id, token) => {
+    deleteProduct(id, token);
+  };
+
   return (
     <>
       <button
@@ -111,6 +116,17 @@ const AllProducts = () => {
           <div className="w-5/6   grid grid-cols-3 grid-rows-1 md:w-full md:grid-cols-2 sm:grid-cols-2 sm:w-full xsm:grid-cols-1 xsm:w-full ">
             {showcaseProd.map((item) => (
               <div className="card-primary" key={item._id}>
+                {/* ICON FOR DELETING IF USER IS ADMIN */}
+                {user && user.isAdmin ? (
+                  <span
+                    className="p-3 bg-p-primary border-2 border-link-color rounded-full text-link-color block absolute right-0.5 top-0.5 hover:border-link-hover hover:text-link-hover transition-colors duration-300"
+                    onClick={() =>
+                      deleteProductHandler(item._id, user.accessToken)
+                    }
+                  >
+                    <RiDeleteBinLine />
+                  </span>
+                ) : null}
                 <Link
                   to={`/singleProduct/${item._id}`}
                   className="h-full flex flex-col"
@@ -120,6 +136,7 @@ const AllProducts = () => {
                       Sale
                     </span>
                   ) : null}
+
                   <div className="card-img-container">
                     <img
                       src={
@@ -132,7 +149,7 @@ const AllProducts = () => {
                   </div>
                   <div className="card-text-container">
                     <h3 className="card-title">{item.title}</h3>
-                    <p className="card-desc">{item.text}</p>
+                    <p className="card-desc">{item.text.slice(0, 200)}...</p>
                     <div className="card-product-desc">
                       <div className="flex justify-between items-end">
                         <div className="flex flex-col w-fit">

@@ -111,51 +111,57 @@ const Navbar = () => {
           </div>
         )}
         {/* hamburger for ADMIN! */}
-        {user && !user.isAdmin ? (
-          <div className="md:hidden xl:hidden sm:w-1/2 xsm:w-1/2 w-1/3 flex justify-center z-10 ">
+        {user && user.isAdmin ? (
+          <div className=" sm:w-1/2 xsm:w-1/2 w-1/3 flex justify-center ">
             <div
-              className={`sm:flex sm:flex-col sm:w-8 xsm:w-8 xsm:flex xsm:flex-col z-20 justify-around h-6  md:hidden xl:hidden ${
+              className={`flex flex-col w-8  justify-around h-6  ${
                 !toggleNav ? "rotate-90" : "rotate-0"
               } transition-all duration-200 ease-linear`}
               onClick={() => setToggleNav(!toggleNav)}
             >
-              <span
-                className={`sm:block sm:w-full sm:h-0.5 xsm:block xsm:w-full xsm:h-0.5 bg-p-primary`}
-              ></span>
-              <span
-                className={`sm:block sm:w-full sm:h-0.5 xsm:block xsm:w-full xsm:h-0.5 bg-p-primary`}
-              ></span>
-              <span
-                className={`sm:block sm:w-full sm:h-0.5 xsm:block xsm:w-full xsm:h-0.5 bg-p-primary`}
-              ></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
             </div>
           </div>
-        ) : null}
-
-        <div className="w-1/2 flex justify-center z-10">
-          <div
-            className={`flex flex-col w-8 z-20 justify-around h-6   ${
-              !toggleNav ? "rotate-90" : "rotate-0"
-            } transition-all duration-200 ease-linear`}
-            onClick={() => setToggleNav(!toggleNav)}
-          >
-            <span className={`block w-full h-0.5 bg-p-primary`}></span>
-            <span className={`block w-full h-0.5 bg-p-primary`}></span>
-            <span className={`block w-full h-0.5 bg-p-primary`}></span>
+        ) : (
+          <div className="w-1/2  hidden sm:flex sm:justify-center xsm:flex xsm:justify-center z-10 cursor-pointer">
+            {" "}
+            <div
+              className={`flex flex-col w-8 justify-around h-6   ${
+                !toggleNav ? "rotate-90" : "rotate-0"
+              } transition-all duration-200 ease-linear`}
+              onClick={() => setToggleNav(!toggleNav)}
+            >
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+            </div>
           </div>
-        </div>
+        )}
         {/* Links */}
         {user && user.isAdmin ? (
           <ul
-            className={`w-1/2  h-screen fixed text-xl flex flex-col justify-around items-center top-0 right-0 bg-card-color transition-transform duration-300 ${
+            className={`w-1/2 h-screen fixed text-xl flex flex-col justify-around items-center top-0 right-0 bg-card-color transition-transform duration-300 ${
               toggleNav ? "translate-x-full" : "translate-x-0"
             }`}
           >
+            <div
+              className={`flex flex-col w-8 z-20 justify-around h-6 absolute top-4 left-4  ${
+                !toggleNav ? "rotate-90" : "rotate-0"
+              } transition-all duration-200 ease-linear`}
+              onClick={() => setToggleNav(!toggleNav)}
+            >
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+              <span className={`block w-full h-0.5 bg-p-primary`}></span>
+            </div>
             {adminLinks.map((link) => (
               <Link
                 to={link.link}
                 key={link.id}
                 className="hover:text-link-color duration-300 transition-colors"
+                onClick={() => setToggleNav(!toggleNav)}
               >
                 <li className="flex items-center">
                   {link.name}
